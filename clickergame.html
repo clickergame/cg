@@ -1,0 +1,1196 @@
+<!--Created by Cole McCarson-->
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Clicker Game - Official</title> 
+<link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+         <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>        
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet"/> <link href="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.css" rel="stylesheet"/> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> <script src="https://cdn.jsdelivr.net/sweetalert2/latest/sweetalert2.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>  
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+                <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    </head>
+    <body id="background">
+    <script>swal("ClickerGame","Version 1.11","success")</script>
+        <center><button id="getclick" onclick="go()">0</button></center>
+        <center><div id="one" data-toggle="modal" data-target="#myModal_one" onclick="PlaySound()">Updates</div></center>
+        <div id="myModal_one" class="modal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title">Updates</h3>
+        <button data-dismiss="modal" id="back" onclick="PlaySound()">Back</button>
+        <center><button id="boost" onclick="boostclick()">BoostClick -<div id="boostcost">25</div></button></center>
+        <center><button id="auto" onclick="autoclick()">AutoClick -<div id="autocost">25</div></button></center>
+        <center><button id="all_updates" onclick="allupdates()">All updates -<div id="allupdatescost">50</div></button></center>
+        </div>
+        </div>
+        </div>
+        </div>
+        <center><div id="six" data-toggle="modal" data-target="#myModal_six" onclick="PlaySound()">Boost items</div></center>
+        <div id="myModal_six" class="modal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title">Boost items</h3>
+        <button data-dismiss="modal" id="back" onclick="PlaySound()">Back</button>
+        <center><button id="boost_item" onclick="boostitem()">Boost item 1 - <div id="boostitemcost">125</div></button></center>
+        <center><button id="boost_item2" onclick="boostitem2()">Boost item 2 -<div id="boostitemcost2">765</div></center>
+        <center><button id="boost_item3" onclick="boostitem3()">Boost item 3 -<div id="boostitemcost3">2350</div></button></center>
+        <center><button id="boost_item4" onclick="boostitem4()">Boost item 4 -<div id="boostitemcost4">8575</div></button></center>
+        <center><button id="boost_item5" onclick="boostitem5()">Boost item 5 -<div id="boostitemcost5">17605</div></button></center>
+        <center><button id="all_boost_items" onclick="allboostitems()">All boost items -<div id="allboostitemscost">29420</div></button></center>
+        </div>
+        </div>
+        </div>
+        </div>
+        <center><div id="seven" data-toggle="modal" data-target="#myModal_seven" onclick="PlaySound()">Auto items</div></center>
+        <div id="myModal_seven" class="modal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title">Auto items</h3>
+        <button data-dismiss="modal" id="back" onclick="PlaySound()">Back</button>
+        <center><button id="auto_item" onclick="autoitem()">Auto item 1 -<div id="autoitemcost">125</div></button></center>
+        <center><button id="auto_item2" onclick="autoitem2()">Auto item 2 -<div id="autoitemcost2">765</div></button></center>
+        <center><button id="auto_item3" onclick="autoitem3()">Auto item 3 -<div id="autoitemcost3">2350</div></button></center>
+        <center><button id="auto_item4" onclick="autoitem4()">Auto item 4 -<div id="autoitemcost4">8575</div></button></center>
+        <center><button id="auto_item5" onclick="autoitem5()">Auto item 5 -<div id="autoitemcost5">17605</div></button></center>
+        <center><button id="all_auto_items" onclick="allautoitems()">All auto items -<div id="allautoitemscost">29420</div></button></center>
+        </div>
+        </div>
+        </div>
+        </div>
+        <center><div id="eight" data-toggle="modal" data-target="#myModal_eight" onclick="PlaySound()">Boost flowers</div></center>
+        <div id="myModal_eight" class="modal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title">Boost flowers</h3>
+       <button data-dismiss="modal" id="back" onclick="PlaySound()">Back</button>
+        <center><button id="boost_flower" onclick="boostflower()">Boost flower 1 -<div id="boostflowercost">9650</div></button></center>
+        <center><button id="boost_flower2" onclick="boostflower2()">Boost flower 2 -<div id="boostflowercost2">17480</div></button></center>
+        <center><button id="boost_flower3" onclick="boostflower3()">Boost flower 3 -<div id="boostflowercost3">86490</div></button></center>
+        <center><button id="boost_flower4" onclick="boostflower4()">Boost flower 4 -<div id="boostflowercost4">168950</div></button></center>
+        <center><button id="boost_flower5" onclick="boostflower5()">Boost flower 5 -<div id="boostflowercost5">254380</div></button></center>
+        <center><button id="all_boost_flowers" onclick="allboostflowers()">All boost flowers -<div id="allboostflowerscost">536950</div></button></center>
+        </div>
+        </div>
+        </div>
+        </div>
+        <center><div id="nine" data-toggle="modal" data-target="#myModal_nine" onclick="PlaySound()">Auto flowers</div></center>
+        <div id="myModal_nine" class="modal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title">Auto flower</h3>
+        <button data-dismiss="modal" id="back" onclick="PlaySound()">Back</button>
+        <center><button id="auto_flower" onclick="autoflower()">Auto flower 1 -<div id="autoflowercost">9650</div></button></center>
+        <center><button id="auto_flower2" onclick="autoflower2()">Auto flower 2 -<div id="autoflowercost2">17480</div></button></center>
+        <center><button id="auto_flower3" onclick="autoflower3()">Auto flower 3 -<div id="autoflowercost3">86490</div></button></center>
+        <center><button id="auto_flower4" onclick="autoflower4()">Auto flower 4 -<div id="autoflowercost4">168950</div></button></center>
+        <center><button id="auto_flower5" onclick="autoflower5()">Auto flower 5 -<div id="autoflowercost5">254380</div></button></center>
+        <center><button id="all_auto_flowers" onclick="allautoflowers()">All auto flowers -<div id="allautoflowerscost">536950</div></button></center>
+        </div>
+        </div>
+        </div>
+        </div>
+        <center><div id="four" data-toggle="modal" data-target="#myModal_five" onclick="PlaySound()">Potions</div></center>
+        <div id="myModal_five" class="modal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title">Potions</h3>
+        <button data-dismiss="modal" id="back" onclick="PlaySound()">Back</button>
+        <center><button id="boost_potion" onclick="boostpotion()">Boost potion -<div id="boostpotioncost">1000000</div></button></center>
+        <center><button id="auto_potion" onclick="autopotion()">Auto potion -<div id="autopotioncost">1000000</div></button></center>
+        <center><button id="twoxboost_potion" onclick="twoxboostpotion()">2X boost potion -<div id="twoxboostpotioncost">10000000</div></button></center>
+        <center><button id="twoxauto_potion" onclick="twoxautopotion()">2X auto potion -<div id="twoxautopotioncost">10000000</div></button></center>
+        </div>
+        </div>
+        </div>
+        </div>
+        <center><div id="five" data-toggle="modal" data-target="#myModal_four" onclick="PlaySound()" style="color:blue">Helpers</div></center>
+        <div id="myModal_four" class="modal">
+        <div class="modal-diagol">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title" style="color:blue">Helpers</h3>
+        <button data-dismiss="modal" id="back" onclick="PlaySound()">Back</button>
+        <center><button id="helper_" onclick="helper()">Helper 1 -<div id="helpercost">35</div></button></center>
+        <center><button id="helper2_" onclick="helper2()">Helper 2 -<div id="helpercost2">75</div></button></center>
+        <center><button id="helper3_" onclick="helper3()">Helper 3 -<div id="helpercost3">225</div></button></center>
+        <center><button id="helper4_" onclick="helper4()">Helper 4 -<div id="helpercost4">400</div></button></center>
+        <center><button id="helper5_" onclick="helper5()">Helper 5 -<div id="helpercost5">750</div></button></center>
+        <center><button id="helper6_" onclick="helper6()">Helper 6 -<div id="helpercost6">3000</div></button></center>
+        <center><button id="helper7_" onclick="helper7()">Helper 7 -<div id="helpercost7">10000</div></button></center>
+        <center><button id="helper8_" onclick="helper8()">Helper 8 -<div id="helpercost8">25000</div></button></center>
+        <center><button id="helper9_" onclick="helper9()">Helper 9 - <div id="helpercost9">50000</div></button></center>
+        <center><button id="helper10_" onclick="helper10()">Helper 10 -<div id="helpercost10">100000</div></button></center>
+        <center><button id="super_helper" onclick="superhelper()">Super helper -<div id="superhelpercost">1000000</div></button></center>
+        <center><button id="all_helpers" onclick="allhelpers()">All helpers -<div id="allhelperscost">1189510</div></button></center>
+        </div>
+        </div>
+        </div>
+        </div>
+        <center><div id="three" data-toggle="modal" data-target="#myModal_three" onclick="PlaySound()" style="color:green">Statistic</div></center>
+        <div id="myModal_three" class="modal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title" style="color:green">Statistic</h3>
+        <button data-dismiss="modal" id="back" onclick="PlaySound()">Back</button>
+        <center><div id="add_"></div></center>
+        <center><div id="up_"></div></center>
+        </div>
+        </div>
+        </div>
+        </div>
+        <center><div id="two" data-toggle="modal" data-target="#myModal_two" onclick="PlaySound()" style= "color:red">Settings</div></center>
+        <div id="myModal_two" class="modal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title" style= "color:red">Settings</h3>
+        <button data-dismiss="modal" id="back" onclick="PlaySound()">Back</button>
+        <center><button id="update_info" onclick="updateinfo();PlaySound()">Update information</button></center>
+        <center><input type="color" onchange="setcolor()" id="color" onclick="PlaySound()"></center>
+        <center><button id="gradient_" onclick="setgradient();PlaySound()">Gradient change</button></center>
+        <center><audio controls autoplay loop id="nice_song">
+            <source src="https://dl.dropbox.com/s/47yhesl39v8w3at/niceSong.mp3"> 
+            </div>
+            </div>
+            </div>
+            </div>
+        </center> 
+        <style>
+body {
+height:720px;
+    background:linear-gradient(darkgray,white);(top to bottom);
+}
+#getclick {
+    border-radius:10px;
+    margin-top:50px;
+    border:solid black 3px;
+    width:300px;
+    height:200px;
+    font-size:75px;
+    font-family:'Fredoka One';
+    box-shadow:inset 0px 0px 10px;
+}
+#update_info {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#one {
+    background-color:white;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    border-radius:10px;
+    box-shadow:inset 0px 0px 5px;
+}
+#boost {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#two {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    background-color:white;
+    box-shadow:inset 0px 0px 5px;
+}
+#auto {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#add_ {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    background-color:gray;
+    box-shadow:inset 0px 0px 5px;
+}
+#up_ {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    background-color:gray;
+    box-shadow:inset 0px 0px 5px;
+}
+#three {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    background-color:white;
+    box-shadow:inset 0px 0px 5px;
+}
+#color {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#nice_song {
+    border-radius:100px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+}
+#four {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    background-color:white;
+    box-shadow:inset 0px 0px 5px;
+}
+#helper_,#helper2_,#helper3_,#helper4_,#helper5_,#helper6_,#helper7_,#helper8_,#helper9_,#helper10_,#super_helper {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#five {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+    background-color:white;
+}
+#boost_potion,#auto_potion,#twoxboost_potion,#twoxauto_potion {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#six {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+    background-color:white;
+}
+#boost_item,#boost_item2,#boost_item3,#boost_item4,#boost_item5,#auto_item,#auto_item,#auto_item2,#auto_item3,#auto_item4,#auto_item5 {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#seven {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+    background-color:white;
+}
+#eight,#nine {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+    background-color:white;
+}
+#boost_flower,#boost_flower2,#boost_flower3,#boost_flower4,#boost_flower5,#auto_flower,#auto_flower2,#auto_flower3,#auto_flower4,#auto_flower5 {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#gradient_ {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#all_updates,#all_boost_items,#all_auto_items,#all_boost_flowers,#all_auto_flowers,#all_helpers {
+    border-radius:10px;
+    margin-top:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    width:300px;
+    box-shadow:inset 0px 0px 5px;
+}
+#back {
+    border-radius:10px;
+    border:solid black 3px;
+    font-family:'Fredoka One';
+    box-shadow:inset 0px 0px 5px;
+    background-color:white;
+}
+        </style>
+        <script>
+        
+var score = 0;
+var boostcost = 25;
+var add = 1;
+var up = 1;
+var autocost = 25;
+var sec = 1000;
+var helpercost = 35;
+var helpercost2 = 75;
+var helpercost3 = 225;
+var helpercost4 = 400;
+var helpercost5 = 750;
+var helpercost6 = 3000;
+var helpercost7 = 10000;
+var helpercost8 = 25000;
+var helpercost9 = 50000;
+var helpercost10 = 100000;
+var superhelpercost = 1000000;
+var boostpotioncost = 1000000;
+var autopotioncost = 1000000;
+var twoxboostpotioncost = 10000000;
+var twoxautopotioncost = 10000000;
+var boostitemcost = 125;
+var boostitemcost2 = 765;
+var boostitemcost3 = 2350;
+var boostitemcost4 = 8575;
+var boostitemcost5 = 17605;
+var autoitemcost = 125;
+var autoitemcost2 = 765;
+var autoitemcost3 = 2350;
+var autoitemcost4 = 8575;
+var autoitemcost5 = 17605;
+var boostflowercost = 9650
+var boostflowercost2 = 17480
+var boostflowercost3 = 86490
+var boostflowercost4 = 168950
+var boostflowercost5 = 254380
+var autoflowercost = 9650
+var autoflowercost2 = 17480
+var autoflowercost3 = 86490
+var autoflowercost4 = 168950
+var autoflowercost5 = 254380
+var allupdatescost = 50
+var allboostitemscost = 29420
+var allautoitemscost = 29420
+var allboostflowerscost = 536950
+var allautoflowerscost = 536950
+var allhelperscost = 1189510
+var button = new Audio();
+button.src = "http://www.pachd.com/a/button/button1.wav";
+var bad = new Audio();
+bad.src = "https://dl.dropbox.com/s/a15jq547hnt10e4/sfx_hit.mp3";
+var good = new Audio();
+good.src = "https://dl.dropbox.com/s/yuhbesjvnuwxevl/sfx_point.mp3";
+function PlaySound() {
+    button.play();
+}
+function go() {
+    score+=add
+}
+function boostclick(){
+    if(score<=boostcost){
+    swal("You need more.","Click more!","error")
+    bad.play();    
+    }
+    else{ 
+        score-=boostcost;
+        add+=2;
+        boostcost*=2;
+        good.play();
+    }
+}
+function autoclick(){
+    if(score<=autocost){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=autocost;
+        up+=2;
+        autocost*=2;
+        good.play();
+    }
+}
+function allupdates() {
+    if(score<=allupdatescost){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=allupdatescost
+        add+=2
+        up+=2
+        allupdatescost*=2
+        good.play();
+    }
+}
+function time() {
+    score+=up
+    
+}
+function helper() {
+    if(score<=helpercost){
+    swal("You need more.","Click more!","error") 
+    bad.play();   
+    }
+    else{
+        score-=helpercost;
+        add+=1;
+        up+=1
+        helpercost*=2
+        good.play();
+    }
+}
+function helper2(){
+    if(score<=helpercost2){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=helpercost2;
+        add+=3;
+        up+=3;
+        helpercost2*=2
+        good.play();
+    }
+}
+function helper3(){
+    if(score<=helpercost3){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=helpercost3
+        add+=5
+        up+=5
+        helpercost3*=2
+        good.play();
+    }
+}
+function helper4(){
+    if(score<=helpercost4){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=helpercost4
+        add+=8
+        up+=8
+        helpercost4*=2
+        good.play();
+    }
+}
+function helper5(){
+    if(score<=helpercost5){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=helpercost5
+        add+=15
+        up+=15
+        helpercost5*=2
+        good.play();
+    }
+}
+function helper6(){
+    if(score<=helpercost6){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=helpercost6
+        add+=25
+        up+=25
+        helpercost6*=2
+        good.play();
+    }
+}
+function helper7(){
+    if(score<=helpercost7){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=helpercost7
+        add+=50
+        up+=50
+        helpercost7*=2
+        good.play();
+    }
+}
+function helper8(){
+    if(score<=helpercost8){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=helpercost8
+        add+=100
+        up+=100
+        helpercost8*=2
+        good.play();
+    }
+}
+function helper9(){
+    if(score<=helpercost9){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=helpercost9
+        add+=250
+        up+=250
+        helpercost9*=2
+        good.play();
+    }
+}
+function helper10(){
+    if(score<=helpercost10){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=helpercost10
+        add+=500
+        up+=500
+        helpercost10*=2
+        good.play();
+    }
+}
+function superhelper(){
+    if(score<=superhelpercost){
+    swal("You need more.","Click more!","error")
+    bad.play();
+      }
+      else{
+          score-=superhelpercost
+          add+=2500
+          up+=2500
+          superhelpercost*=2
+          good.play();
+      }      
+}
+function allhelpers(){
+    if(score<=allhelperscost){
+        swal("You need more.","Click more!","error")
+        bad.play();
+    }
+    else{
+        score-=allhelperscost
+        add+=3455
+        up+=3455
+        allhelperscost*=2
+        good.play();
+    }
+}
+function boostpotion(){
+    if(score<=boostpotioncost){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostpotioncost
+        add+=5000
+        boostpotioncost*=2
+        good.play();
+    }    
+}
+function autopotion(){
+    if(score<=autopotioncost){
+    swal("You need more.","Click more!","error")
+    bad.play();        
+    }
+    else{
+        score-=autopotioncost
+        up+=5000
+        autopotioncost*=2
+        good.play();
+    }
+}
+function twoxboostpotion(){
+    if(score<=twoxboostpotioncost){
+    swal("You need more.","Click more!","error")
+    bad.play();        
+    }
+    else{
+        score-=twoxboostpotioncost
+        add*=2
+        twoxboostpotioncost*=2
+        good.play();
+    }
+}
+function twoxautopotion(){
+    if(score<=twoxautopotioncost){
+    swal("You need more.","Click more!","error")
+    bad.play();        
+    }
+    else{
+        score-=twoxautopotioncost
+        up*=2
+        twoxautopotioncost*=2
+        good.play();
+    }
+}
+function boostitem(){
+    if(score<=boostitemcost){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostitemcost
+        add+=5
+        boostitemcost*=2
+        good.play();
+    }
+}
+function boostitem2(){
+    if(score<=boostitemcost2){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostitemcost2
+        add+=25
+        boostitemcost2*=2
+        good.play();
+    }
+}
+function boostitem3(){
+    if(score<=boostitemcost3){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostitemcost3
+        add+=50
+        boostitemcost3*=2
+        good.play();
+    }
+}
+function boostitem4(){
+    if(score<=boostitemcost4){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostitemcost4
+        add+=125
+        boostitemcost4*=2
+        good.play();
+    }
+}
+function boostitem5(){
+    if(score<=boostitemcost5){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostitemcost5
+        add+=300
+        boostitemcost5*=2
+        good.play();
+    }
+}
+function allboostitems(){
+    if(score<=allboostitemscost){
+        swal("You need more.","Click more!","error")
+        bad.play();
+    }
+    else{
+        score-=allboostitemscost
+        add+=505
+        allboostitemscost*=2
+        good.play();
+    }
+}
+function autoitem(){
+    if(score<=autoitemcost){
+    swal("You need more.","Click more!","error")
+    bad.play();        
+    }
+    else{
+        score-=autoitemcost
+        up+=5
+        autoitemcost*=2
+        good.play();
+    }
+}
+function autoitem2(){
+    if(score<=autoitemcost2){
+    swal("You need more.","Click more!","error")
+    bad.play();        
+    }
+    else{
+        score-=autoitemcost2
+        up+=25
+        autoitemcost2*=2
+        good.play();
+    }
+}
+function autoitem3(){
+    if(score<=autoitemcost3){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=autoitemcost3
+        up+=50
+        autoitemcost3*=2
+        good.play();
+    }
+}
+function autoitem4(){
+    if(score<=autoitemcost4){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=autoitemcost4
+        up+=125
+        autoitemcost4*=2
+        good.play();
+    }
+}
+function autoitem5(){
+    if(score<=autoitemcost5){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=autoitemcost5
+        up+=300
+        autoitemcost5*=2
+        good.play();
+    }
+}
+function allautoitems(){
+    if(score<=allautoitemscost){
+        swal("You need more.","Click more!","error")
+        bad.play();
+    }
+    else{
+        score-=allautoitemscost
+        up+=505
+        allautoitemscost*=2
+        good.play();
+    }
+}
+function boostflower(){
+    if(score<=boostflowercost){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostflowercost
+        add+=175
+        boostflowercost*=2
+        good.play();
+    }
+}
+function boostflower2(){
+    if(score<=boostflowercost2){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostflowercost2
+        add+=295
+        boostflowercost2*=2
+        good.play();
+    }
+}
+function boostflower3(){
+    if(score<=boostflowercost3){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostflowercost3
+        add+=500
+        boostflowercost3*=2 
+        good.play();
+    }
+}
+function boostflower4(){
+    if(score<=boostflowercost4){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostflowercost4
+        add+=1000
+        boostflowercost4*=2
+        good.play();
+    }
+}
+function boostflower5(){
+    if(score<=boostflowercost5){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=boostflowercost5
+        add+=1500
+        boostflowercost5*=2
+        good.play();
+    }    
+}
+function allboostflowers(){
+    if(score<=allboostflowerscost){
+        swal("You need more.","Click more!","error")
+        bad.play();
+    }
+    else{
+        score-=allboostflowerscost
+        add+=3470
+        allboostflowerscost*=2
+        good.play();
+    }
+}
+function autoflower(){
+    if(score<=autoflowercost){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=autoflowercost
+        up+=175
+        autoflowercost*=2
+        good.play();
+    }
+}
+function autoflower2(){
+    if(score<=autoflowercost2){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=autoflowercost2
+        up+=295
+        autoflowercost2*=2
+        good.play();
+    }
+}
+function autoflower3(){
+    if(score<=autoflowercost3){
+    swal("You need more.","Click more!","error")
+    bad.play();
+    }
+    else{
+        score-=autoflowercost3
+        up+=500
+        autoflowercost3*=2
+        good.play();
+    }
+}
+function autoflower4(){
+    if(score<=autoflowercost4){
+        swal("You need more.","Click more!","error")
+        bad.play();
+    }
+    else{
+        score-=autoflowercost4
+        up+=1000
+        autoflowercost4*=2
+        good.play();
+    }
+}
+function autoflower5(){
+    if(score<=autoflowercost5){
+        swal("You need more.","Click more!","error")
+        bad.play();
+    }
+    else{
+        score-=autoflowercost5
+        up+=1500
+        autoflowercost5*=2
+        good.play();
+    }
+}
+function allautoflowers(){
+    if(score<=allautoflowerscost){
+        swal("You need more.","Click more!","error")
+        bad.play();
+    }
+    else{
+        score-=allautoflowerscost
+        up+=3470
+        allautoflowerscost*=2
+        good.play();
+    }
+}
+function results(){
+document.getElementById("getclick").innerHTML = score
+
+document.getElementById("boostcost").innerHTML = boostcost;
+
+document.getElementById("autocost").innerHTML = autocost
+
+document.getElementById("allupdatescost").innerHTML = allupdatescost
+
+document.getElementById("helpercost").innerHTML = helpercost
+
+document.getElementById("helpercost2").innerHTML = helpercost2
+
+document.getElementById("helpercost3").innerHTML = helpercost3
+
+document.getElementById("helpercost4").innerHTML = helpercost4
+
+document.getElementById("helpercost5").innerHTML = helpercost5
+
+document.getElementById("helpercost6").innerHTML = helpercost6
+
+document.getElementById("helpercost7").innerHTML = helpercost7
+
+document.getElementById("helpercost8").innerHTML = helpercost8
+
+document.getElementById("helpercost9").innerHTML = helpercost9
+
+document.getElementById("helpercost10").innerHTML = helpercost10
+
+document.getElementById("superhelpercost").innerHTML = superhelpercost
+
+document.getElementById("allhelperscost").innerHTML = allhelperscost
+
+document.getElementById("boostpotioncost").innerHTML = boostpotioncost
+
+document.getElementById("autopotioncost").innerHTML = autopotioncost
+
+document.getElementById("twoxboostpotioncost").innerHTML = twoxboostpotioncost
+
+document.getElementById("twoxautopotioncost").innerHTML = twoxautopotioncost
+
+document.getElementById("boostitemcost").innerHTML = boostitemcost
+
+document.getElementById("boostitemcost2").innerHTML = boostitemcost2
+
+document.getElementById("boostitemcost3").innerHTML = boostitemcost3
+
+document.getElementById("boostitemcost4").innerHTML = boostitemcost4
+
+document.getElementById("boostitemcost5").innerHTML = boostitemcost5
+
+document.getElementById("allboostitemscost").innerHTML = allboostitemscost 
+
+document.getElementById("autoitemcost").innerHTML = autoitemcost 
+
+document.getElementById("autoitemcost2").innerHTML = autoitemcost2
+
+document.getElementById("autoitemcost3").innerHTML = autoitemcost3
+
+document.getElementById("autoitemcost4").innerHTML = autoitemcost4
+
+document.getElementById("autoitemcost5").innerHTML = autoitemcost5
+
+document.getElementById("allautoitemscost").innerHTML = allautoitemscost
+
+document.getElementById("boostflowercost").innerHTML = boostflowercost
+
+document.getElementById("boostflowercost2").innerHTML = boostflowercost2
+
+document.getElementById("boostflowercost3").innerHTML = boostflowercost3
+
+document.getElementById("boostflowercost4").innerHTML = boostflowercost4
+
+document.getElementById("boostflowercost5").innerHTML = boostflowercost5
+
+document.getElementById("allboostflowerscost").innerHTML = allboostflowerscost
+
+document.getElementById("autoflowercost").innerHTML = autoflowercost
+
+document.getElementById("autoflowercost2").innerHTML = autoflowercost2
+
+document.getElementById("autoflowercost3").innerHTML = autoflowercost3
+
+document.getElementById("autoflowercost4").innerHTML = autoflowercost4
+
+document.getElementById("autoflowercost5").innerHTML = autoflowercost5
+
+document.getElementById("allautoflowerscost").innerHTML = allautoflowerscost
+
+document.getElementById("add_").innerHTML = "Boostclick: " + add
+
+document.getElementById("up_").innerHTML = "Autoclick: " + up
+}
+function setcolor(){
+    let color = document.getElementById("color").value
+
+document.getElementById("background").style.background = color
+}
+function setgradient(){
+    background.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    one.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    two.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    three.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    four.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    five.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    six.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    seven.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    eight.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    nine.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    getclick.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+   update_info.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_item.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_item2.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_item3.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_item4.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+     boost_item5.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_item.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_item2.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_item3.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_item4.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_item5.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper2_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper3_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper4_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper5_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper6_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper7_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper8_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper9_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    helper10_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    super_helper.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_potion.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_potion.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    twoxboost_potion.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    twoxauto_potion.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_flower.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_flower2.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_flower3.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_flower4.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    boost_flower5.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_flower.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";    auto_flower2.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_flower3.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_flower4.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    auto_flower5.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    add_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    up_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    gradient_.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+    all_updates.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+all_boost_items.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+color.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+all_auto_items.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+all_boost_flowers.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+all_auto_flowers.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+all_helpers.style.background = "linear-gradient(to right, "+"#"+('000000'+((Math.random()*0xFFFFFF)
+|0).toString(16)).substr(-6)+', #'+('000000'+((Math.random()*0xFFFFFF)|0).toString(16)).substr(-6)+")";
+}
+function updateinfo() {
+swal("","\n1.0:\n-Added click button and score.\n-Added button 'Update information'.\n1.1:\n-Added updates.\n-Added statistic.\n1.2:\n-Added custom color. \n-Added music.\n1.3:\n-Added helpers.\n1.4:\n-Added potions.\n1.5:\n-Added items.\n1.6:\n-Added flowers.\n1.7:\n-Added SweetAlert.\n1.8:\n-Added gradient change.\n1.9:\n-Added 'All' buttons.\n1.10:\n-Added Bootstrap effects.\n-Removed Jquery effects.\n1.11:\n-Added sounds.")
+}
+
+setInterval(results, 1)
+setInterval(time, sec)
+        </script>
+<p>
+</br>
+</br>
+</br>
+<b>To add music and customize the look of the game, visit the settings tab.</b>
+</br> Copyright 2019 CCI & Cole McCarson Productions. All Rights Reserved.</p>
+    </body>
+</html>
